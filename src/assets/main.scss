@@ -1,0 +1,5 @@
+$card-shadow: 0px 4px 8px 0px hsl(0, 0%, 29%), 0px 6px 20px 0px hsl(0, 0%, 21%);
+
+.card-shadow{
+    box-shadow: $card-shadow;
+}
