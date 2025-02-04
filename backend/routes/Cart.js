@@ -2,10 +2,13 @@ const express = require('express')
 const pool = require('../database').pool
 const {v4: uuidv4} = require('uuid')
 const moment = require('moment')
+const dotenv = require("dotenv")
 const router = express.Router()
 
-const stripe = require('stripe')('sk_test_51OdtOoG6vm99Qmve0y9QUkueHI31wXjGqvz2oGrgdH5QedewysQuhjG6LaDrHW1WAOvzuos2kenkhRu2ys0d9xrn000KGqkjCo')
-const endpointSecret = "whsec_17afb61c2e43277df1008b60f55894b80e9f0413c311373d51bb07ff9bc4ac06"
+dotenv.config()
+
+const stripe = require('stripe')(process.env.STRPIE_SECRET_KEY)
+const endpointSecret = process.env.endPoint
 
 
 //Check Out Cart
